@@ -1,0 +1,90 @@
+
+<div class="row">
+  <% @courses.each_slice(2).each do |course_pair| %>
+    <div class="span3">
+    <% course_pair.each do |course| %>
+        <div class="tile <%= course.color %>">
+          <div class="tile-header-wrap">
+            <p class="tile-header">
+              <a class="tile-link" href="<%= course.url %>"><%= course.name %></a>
+            </p>
+          </div><!--/.tile-header-wrap -->
+          <p class="tile-content"><%= course.description %></p>
+          <p class="tile-footer">mensalidade de R$<%= course.price %></p>
+        </div><!--/.<%= course.color %> -->
+    <% end %>
+    </div><!--/.span3 -->
+  <% end %>
+  <div class="span6 space">
+    <h2>Cursos Rápidos</h2>
+    <hr />
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th class="course-column">Curso</th>
+          <th>Duração</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @short_courses.each do |course| %>
+          <tr>
+            <td class="course-column">
+              <a href="<%= course.url %>"><%= course.name %></a>
+            </td>
+            <td><%= course.duration %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div><!--/.span6 -->
+  <div class="span6 space">
+    <h2>Academias</h2>
+    <hr />
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th class="course-column">Curso</th>
+          <th>Duração</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @long_courses.each do |course| %>
+          <tr>
+            <td class="course-column">
+              <a href="<%= course.url %>"><%= course.name %></a>
+            </td>
+            <td><%= course.duration %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div><!--/.span6 -->
+</div><!--/.row -->
+</div><!--/.container -->
+<div class="container body space">
+  <div class="row">
+    <div class="span4">
+      <h2>Blog da IT</h2>
+      <hr />
+      <% @news_feed.entries[0,4].each do |entry| %>
+        <p class="article"><a href="<%= entry.url %>"><%= entry.title %></a></p>
+        <p class="muted">Em <%= entry.published %> por <%= entry.author %></p>
+      <% end %>
+    </div><!--/.span4 -->
+    <div class="span4">
+      <h2>Oportunidades</h2>
+      <hr />
+      <% @jobs_feed.entries[0,4].each do |entry| %>
+        <p class="article"><a href="<%= entry.url %>"><%= entry.title %></a></p>
+        <p class="muted">em <%= entry.published %></p>
+      <% end %>
+    </div><!--/.span4 -->
+    <div class="span4">
+      <h2>Depoimentos</h2>
+      <hr />
+      <blockquote class="pull-right">
+        <p>Está no ar a <a href='https://www.facebook.com/LUNALTAS'>Lunaltas</a>, empresa de desenvolvimento web que nasceu nas salas da IT cursos</p>
+        <small>@tiago_tobias_ (via twitter)</small>
+      </blockquote>
+    </div><!--/.span4 -->
+  </div><!--/.row -->

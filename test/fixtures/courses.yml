@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyString
+  duration: MyString
+  content: MyText
+  credits: 1
+  promoted: false
+  color: MyString
+
+two:
+  name: MyString
+  description: MyString
+  duration: MyString
+  content: MyText
+  credits: 1
+  promoted: false
+  color: MyString
