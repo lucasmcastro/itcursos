@@ -1,0 +1,12 @@
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <h1>IT Cursos</h1>
+  <div>
+    <%= f.email_field :email, :placeholder => "Username", :id => "username" %>
+  </div>
+  <div>
+    <%= f.password_field :password, :placeholder => "Password", :id => "password" %>
+  </div>
+  <div>
+    <%= f.submit "Entrar" %>
+  </div>
+<% end %>

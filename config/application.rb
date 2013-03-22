@@ -58,5 +58,10 @@ module Itcursos
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Change Devise Layout
+    config.to_prepare do
+        Devise::SessionsController.layout "devise.html.erb"
+    end
   end
 end

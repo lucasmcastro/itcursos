@@ -16,6 +16,8 @@ Itcursos::Application.configure do
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
+  config.assets.precompile += %w( login.css )
+  config.assets.precompile += %w( welcome.js jquery.js )
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -64,4 +66,5 @@ Itcursos::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  config.action_mailer.default_url_options = { :host => 'itcursos.rs.af.cm' }
 end

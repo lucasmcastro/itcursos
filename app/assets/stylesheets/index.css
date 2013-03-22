@@ -30,7 +30,8 @@ header { padding: 20px 0; }
 
 /* Tiles */
 .tile {
-	padding: 10px 15px 20px 15px;
+	cursor: pointer;
+	padding: 10px 15px 0 15px;
 	border-radius: 2px 2px 8px 2px;
 	-moz-border-radius: 2px 2px 8px 2px;
 	-webkit-border-radius: 2px 2px 8px 2px;
@@ -60,12 +61,11 @@ p.tile-content { text-shadow: 0 1px 2px #555; margin-top: 10px; }
 p.tile-footer {
 	font-size: 18px;
 	font-weight: 500;
-	margin: 0;
-	text-align: right;
-	position: absolute;
-	margin-top: 10px; }
+	margin: 10px 0 0 0;
+	position: relative;
+	text-align: right; }
 
-a.tile-link { color: white; }
+a.tile-link { color: white; text-decoration: none; }
 
 .tile.yellow { background-color: #FACB47; }
 .tile.green { background-color: #96BA5A; }
@@ -112,6 +112,7 @@ ul.unstyled > li { line-height: 23px; color: #666; }
 	.tile { min-height: 170px; }
 	.tile-header-wrap { min-height: 60px; }
 	.tile-content { min-height: 60px; }
+	.tile-footer { min-width: 195px; }
 }
 
 @media (max-width: 979px) {

@@ -1,6 +1,10 @@
 Itcursos::Application.routes.draw do
-  get "welcome/index"
-
-  resources :courses
+  resources :courses do
+  	collection do
+  		get 'promo'
+  		post 'update_promo'
+  	end
+  end
+  devise_for :users
   root :to => 'welcome#index'
 end
