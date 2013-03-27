@@ -67,14 +67,17 @@ p.tile-footer {
 
 a.tile-link { color: white; text-decoration: none; }
 
-.tile.yellow { background-color: #FACB47; }
-.tile.green { background-color: #96BA5A; }
-.tile.blue { background-color: #3C8DC5; }
-.tile.red { background-color: #CE534D; }
-.tile.orange { background-color: #F48C36; }
-.tile.pink { background-color: #ef6d89; }
-.tile.purple { background-color: #564660; }
-.tile.brown { background-color: #7d6868; }
+.tile.amarelo { background-color: #FACB47; }
+.tile.verde { background-color: #96BA5A; }
+.tile.azul { background-color: #3C8DC5; }
+.tile.vermelho { background-color: #CE534D; }
+.tile.laranja { background-color: #F48C36; }
+.tile.rosa { background-color: #ef6d89; }
+.tile.roxo { background-color: #564660; }
+.tile.marrom { background-color: #7d6868; }
+.tile.salmao { background-color: #FA8072; }
+.tile.turquesa  { background-color: #48D1CC; }
+
 
 /* Content */
 .space { margin-top: 25px; }

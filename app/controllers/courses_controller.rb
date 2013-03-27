@@ -1,10 +1,7 @@
 class CoursesController < ApplicationController
   def index
-    @courses = Course.all
-  end
-
-  def show
-    @course = Course.find(params[:id])
+    @promoted_courses = Course.order('courses.order').find_all_by_promoted(true);
+    @non_promoted_courses = Course.order('courses.order').find_all_by_promoted(false);
   end
 
   def new
@@ -19,7 +16,7 @@ class CoursesController < ApplicationController
     @course = Course.new(params[:course])
 
     if @course.save
-      redirect_to @course, notice: 'Course was successfully created.'
+      redirect_to courses_url, notice: 'Curso criado com sucesso.'
     else
       render action: "new"
     end
@@ -29,7 +26,7 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
 
     if @course.update_attributes(params[:course])
-      redirect_to @course, notice: 'Course was successfully updated.'
+      redirect_to courses_url, notice: 'Curso atualizado com sucesso.'
     else
       render action: "edit"
     end

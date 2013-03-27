@@ -16,7 +16,7 @@ Itcursos::Application.configure do
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
-  config.assets.precompile += %w( login.css )
+  config.assets.precompile += %w( login.css courses.css )
   config.assets.precompile += %w( welcome.js jquery.js )
 
   # Generate digests for assets URLs

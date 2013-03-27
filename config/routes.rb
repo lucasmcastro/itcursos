@@ -1,5 +1,5 @@
 Itcursos::Application.routes.draw do
-  resources :courses do
+  resources :courses, :except => :show do
   	collection do
   		get 'promo'
   		post 'update_promo'
