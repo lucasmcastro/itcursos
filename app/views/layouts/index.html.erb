@@ -28,19 +28,26 @@
 </head>
 <body>
 <header>
-	<div class="container header">
+	<div class="container header navbar">
 		<div class="row">
 			<div class="span5">
 				<a href="#"><img src="assets/itcursos.png" alt="IT Cursos" /></a>
 			</div><!--/.span5 -->
 			<div class="span7">
-				<ul class="nav nav-pills">
-					<li><a href="http://www.itcursos.com.br/home/sysop-plus">Redes</a></li>
-					<li><a href="http://www.itcursos.com.br/home/dsnr-plus">Design</a></li>
-					<li><a href="http://www.itcursos.com.br/home/dev-plus">Programação</a></li>
-					<li><a href="http://itcursos.com.br/home/turmas">Cursos rápidos</a></li>
-					<li><a href="http://www.itcursos.com.br/home/atendimento">Contato</a></li>
-				</ul>
+			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+	      </button>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li class><a href="http://www.itcursos.com.br/home/sysop-plus">Redes</a></li>
+						<li class><a href="http://www.itcursos.com.br/home/dsnr-plus">Design</a></li>
+						<li class><a href="http://www.itcursos.com.br/home/dev-plus">Programação</a></li>
+						<li class><a href="http://itcursos.com.br/home/turmas">Cursos rápidos</a></li>
+						<li class><a href="http://www.itcursos.com.br/home/atendimento">Contato</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
 			</div><!--/.span7 -->
 			<div class="clearfix"></div>
 			<div class="span12">
@@ -118,7 +125,6 @@
 		</div><!--/.row -->
 	</div><!--/.container -->
 </footer>
+<%= javascript_include_tag "application" %>
 </body>
-<%= javascript_include_tag "jquery" %>
-<%= javascript_include_tag "welcome" %>
 </html>
