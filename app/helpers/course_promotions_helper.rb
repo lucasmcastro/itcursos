@@ -1,0 +1,2 @@
+module CoursePromotionsHelper
+end

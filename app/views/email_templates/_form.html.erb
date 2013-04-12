@@ -1,0 +1,37 @@
+<%= form_for(@email_template) do |f| %>
+  <% if @email_template.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@email_template.errors.count, "error") %> prohibited this email_template from being saved:</h2>
+
+      <ul>
+      <% @email_template.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Titulo e Sub (separados por vírgula)" %>
+    <%= f.text_field :title, :id => 'title_input'  %>
+  </div>
+  <div class="field">
+    <%= f.label "Conteúdo (separados por vírgula)" %>
+    <%= f.text_field :topics, :id => 'topics_input' %>
+  </div>
+  <div class="field">
+    <%= f.label "Destaque Preço (separados por vírgula)" %>
+    <%= f.text_field :price, :id => 'price_input'  %>
+  </div>
+  <div class="field">
+    <%= f.label "Destaque 2" %>
+    <%= f.text_area :highlight, :rows => 4, :id => 'highlight_input' %>
+  </div>
+  <div class="field">
+    <%= f.label "Destaque 3" %>
+    <%= f.text_area :content, :rows => 18, :id => 'content_input' %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Salvar" %> &nbsp;&nbsp; <%= link_to 'Cancelar', email_templates_path %>
+  </div>
+<% end %>
