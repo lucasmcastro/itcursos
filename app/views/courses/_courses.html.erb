@@ -4,26 +4,22 @@
 
 <table class='list'>
   <tr>
-    <th>Ordem</th>
     <th>Nome</th>
-    <th>Descrição</th>
-    <th>Cor</th>    
-    <th>Preço</th>    
     <th>Duração</th>
     <th>Créditos</th>
+    <th></th>
+    <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% courses.each do |course| %>
   <tr>
-    <td><%= course.order %></td>
-    <td><%= course.name %></td>
-    <td><%= course.description %></td>    
-    <td><%= course.color %></td>
-    <td><%= course.price %></td>
+    <td class='first'><%= course.name %></td>
     <td><%= course.duration %></td>
     <td><%= course.credits %></td>
+    <td><%= link_to 'Promotion', promotion_link(course) %></td>
+    <td><%= link_to 'Template', template_link(course) %></td>
     <td><%= link_to 'Alterar', edit_course_path(course) %></td>
     <td><%= link_to 'Remover', course, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
   </tr>

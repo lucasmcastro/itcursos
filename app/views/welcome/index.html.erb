@@ -6,10 +6,10 @@
         <div class="tile <%= course.color %>" data-href=<%= course.url %>>
           <div class="tile-header-wrap">
             <p class="tile-header">
-              <a class="tile-link" href="<%= course.url %>"><%= course.name %></a>
+              <a class="tile-link" href="<%= course.url %>"><%= course.title %></a>
             </p>
           </div><!--/.tile-header-wrap -->
-          <p class="tile-content"><%= course.description %></p>
+          <p class="tile-content"><%= course.content %></p>
           <p class="tile-footer">parcelas de R$<%= course.price %></p>
         </div><!--/.<%= course.color %> -->
     <% end %>

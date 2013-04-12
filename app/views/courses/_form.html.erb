@@ -8,75 +8,29 @@
         <li><%= msg %></li>
       <% end %>
       </ul>
-    </div>
+    </div><!-- #id_explanation -->
   <% end %>
   <div class="row">
     <div class="span6">
       <div class="field">
         <%= f.label :nome %>
         <%= f.text_field :name %>
-      </div>
-      <div class="field">
-        <%= f.label :descrição %>
-        <%= f.text_field :description %>
-      </div>
+      </div><!-- .field -->
       <div class="field">
         <%= f.label :duração %>
         <%= f.text_field :duration %>
-      </div>
+      </div><!-- .field -->
       <div class="field">
         <%= f.label :créditos %>
         <%= f.number_field :credits %>
-      </div>
+      </div><!-- .field -->
       <div class="field">
-        <%= f.label :preço %>
-        <%= f.text_field :price %>
-      </div>
-    </div><!--./span6 -->
-    <div class="span6">
-      <div class="field">
-        <%= f.label :link %>
-        <%= f.text_field :url %>
-      </div>
-      <div class="field">
-        <%= f.label :ordem %>
-        <%= f.text_field :order %>
-      </div>
-      <div class="field">
-        <%= f.label :cor %>
-        <% 
-          cores = [
-            ["amarelo","amarelo"],
-            ["verde","verde"],
-            ["azul","azul"],
-            ["vermelho","vermelho"],
-            ["laranja","laranja"],
-            ["rosa","rosa"],
-            ["roxo","roxo"],
-            ["marrom","marrom"],
-            ["salmao","salmao"],
-            ["turquesa","turquesa"]
-          ] 
-        %>
-        <%= f.select :color, options_for_select(cores, :selected => @course.color) %>
-      </div>      
-      <div class="field">
-        <%
-          promovido = [
-            ["sim",true],
-            ["não",false]
-          ] 
-        %>
-        <%= f.label :promovido? %>
-        <%= f.select :promoted, 
-          options_for_select(
-            promovido, :selected => @course.promoted
-          ) 
-        %>
-      </div>
+        <%= f.label :conteúdo %>
+        <%= f.text_area :content, :rows => 10 %>
+      </div><!-- .field -->
     </div><!--./span6 -->
   </div><!--./row -->
   <div class="actions">
     <%= f.submit "Enviar" %>
-  </div>
+  </div><!-- .actions -->
 <% end %>

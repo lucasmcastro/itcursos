@@ -11,23 +11,44 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130320224327) do
+ActiveRecord::Schema.define(:version => 20130410124714) do
+
+  create_table "course_promotions", :force => true do |t|
+    t.string   "title"
+    t.string   "content"
+    t.string   "price"
+    t.string   "color"
+    t.string   "url"
+    t.integer  "order"
+    t.boolean  "active"
+    t.integer  "course_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "course_promotions", ["course_id"], :name => "index_course_promotions_on_course_id"
 
   create_table "courses", :force => true do |t|
     t.string   "name"
-    t.string   "description"
     t.string   "duration"
     t.text     "content"
     t.integer  "credits"
-    t.boolean  "promoted"
-    t.string   "color"
-    t.string   "url"
-    t.string   "price"
-    t.string   "kind"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "order"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
+
+  create_table "email_templates", :force => true do |t|
+    t.integer  "course_id"
+    t.string   "price"
+    t.string   "title"
+    t.string   "topics"
+    t.text     "highlight"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "email_templates", ["course_id"], :name => "index_email_templates_on_course_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

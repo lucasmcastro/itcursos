@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
   def index
-    @promoted_courses = Course.order('courses.order').find_all_by_promoted(true);
-    @non_promoted_courses = Course.order('courses.order').find_all_by_promoted(false);
+    @promoted_courses = Course.all.select { |course| course.course_promotions.any? }
+    @unpromoted_courses = Course.all.select { |course| course.course_promotions.empty? }
   end
 
   def new

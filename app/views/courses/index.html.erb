@@ -6,11 +6,13 @@
 
 <%= link_to 'Novo Curso', new_course_path %>
 <br />
-<br />
+
+
 <h1>Cursos Não Promovidos</h1>
 <%= render :partial => 'courses', :locals => 
-    { :courses => @non_promoted_courses } %>
+    { :courses => @unpromoted_courses } %>
 
-
+<%= link_to 'Novo Curso', new_course_path %>
 <br />
+
 

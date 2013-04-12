@@ -1,21 +1,4 @@
-table.list {
-  border-width: 1px;
-  border-color: #666666;
-  border-collapse: collapse;
-}
-
-table.list th {
-  border-width: 1px;
-  padding: 8px;
-  border-style: solid;
-  border-color: #666666;
-  background-color: #dedede;
-}
-
-table.list td {
-  border-width: 1px;
-  padding: 8px;
-  border-style: solid;
-  border-color: #666666;
-  background-color: #ffffff;
-}
+table.list { border-width: 1px; border-color: #666666; border-collapse: collapse; }
+table.list td, table.list th { border-width: 1px; padding: 8px; border-style: solid; border-color: #666666; background-color: #ffffff; }
+table.list th { background-color: #dedede; }
+table.list td.first { min-width: 200px; }

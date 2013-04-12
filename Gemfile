@@ -12,7 +12,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'twitter-bootstrap-rails'
 gem 'feedzirra'
 gem 'thin'
 gem 'devise'
