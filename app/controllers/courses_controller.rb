@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
   def index
-    @promoted_courses = Course.all.select { |course| course.course_promotions.any? }
-    @unpromoted_courses = Course.all.select { |course| course.course_promotions.empty? }
+    @promoted_courses = Course.joins(:course_promotion).where("course_promotions.active = true")
+    @unpromoted_courses = Course.joins(:course_promotion).where("course_promotions.active = false")
   end
 
   def new

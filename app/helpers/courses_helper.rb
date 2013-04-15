@@ -7,8 +7,8 @@ module CoursesHelper
     end
   end
   def promotion_link(course)
-    if course.course_promotions.any?
-      return edit_course_promotion_url(course.course_promotions.first)
+    if course.course_promotion
+      return edit_course_promotion_url(course.course_promotion)
     else
       return new_course_promotion_url(course)
     end

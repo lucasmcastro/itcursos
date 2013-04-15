@@ -1,0 +1,11 @@
+<div class="span3">
+  <div id="promo-tile-<%= @promotion.id %>" class="tile <%= @promotion.color %>" data-href=<%= @promotion.url %>>
+    <div class="tile-header-wrap">
+      <p class="tile-header">
+        <a id="promo-url" class="tile-link" href="<%= @promotion.url %>"><%= @promotion.title %></a>
+      </p>
+    </div><!-- .tile-header-wrap -->
+    <p id="promo-content" class="tile-content"><%= @promotion.content %></p>
+    <p id="promo-footer" class="tile-footer">parcelas de R$<%= @promotion.price %></p>
+  </div><!-- .tile -->
+</div><!-- .span3 -->

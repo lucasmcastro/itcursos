@@ -1,48 +1,50 @@
-      <div class="field">
-        <%= f.label :descrição %>
-        <%= f.text_field :description %>
-      </div>
-      <div class="field">
-        <%= f.label :preço %>
-        <%= f.text_field :price %>
-      </div>
-      <div class="field">
-        <%= f.label :ordem %>
-        <%= f.text_field :order %>
-      </div>
-      <div class="field">
-        <%= f.label :link %>
-        <%= f.text_field :url %>
-      </div>
-      <div class="field">
-        <%= f.label :cor %>
-        <% 
-          cores = [
-            ["amarelo","amarelo"],
-            ["verde","verde"],
-            ["azul","azul"],
-            ["vermelho","vermelho"],
-            ["laranja","laranja"],
-            ["rosa","rosa"],
-            ["roxo","roxo"],
-            ["marrom","marrom"],
-            ["salmao","salmao"],
-            ["turquesa","turquesa"]
-          ] 
-        %>
-        <%= f.select :color, options_for_select(cores, :selected => @course.color) %>
-      </div>      
-      <div class="field">
-        <%
-          promovido = [
-            ["sim",true],
-            ["não",false]
-          ] 
-        %>
-        <%= f.label :promovido? %>
-        <%= f.select :active, 
-          options_for_select(
-            promovido, :selected => @course_promotion.active
-          ) 
-        %>
-      </div>
+<%= form_for @promotion do |f| %>
+  <div class="field">
+    <%= f.label :título %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :descrição %>
+    <%= f.text_field :content %>
+  </div>
+  <div class="field">
+    <%= f.label :rodapé %>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :ordem %>
+    <%= f.text_field :order %>
+  </div>
+  <div class="field">
+    <%= f.label :link %>
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :cor %>
+    <% 
+      cores = [
+        ["amarelo","amarelo"],
+        ["verde","verde"],
+        ["azul","azul"],
+        ["vermelho","vermelho"],
+        ["laranja","laranja"],
+        ["rosa","rosa"],
+        ["roxo","roxo"],
+        ["marrom","marrom"],
+        ["salmao","salmao"],
+        ["turquesa","turquesa"]
+      ] 
+    %>
+    <%= f.select :color, options_for_select(cores, 
+    :selected => @promotion.color) %>
+  </div>      
+  <div class="field">
+    <% promovido = [["sim",true],["não",false]] %>
+    <%= f.label :promovido? %>
+    <%= f.select :active, 
+      options_for_select(promovido, 
+      :selected => @promotion.active) %>
+  </div>
+  <br /><br />
+  <%= f.submit "salvar" %>
+<% end %>
