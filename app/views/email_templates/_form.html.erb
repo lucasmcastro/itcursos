@@ -31,7 +31,10 @@
     <%= f.label "Destaque 3" %>
     <%= f.text_area :content, :rows => 18, :id => 'content_input' %>
   </div>
-  <div class="actions">
-    <%= f.submit "Salvar" %> &nbsp;&nbsp; <%= link_to 'Cancelar', email_templates_path %>
+  <div class="action">
+    <%= f.submit "Salvar" %>&nbsp;&nbsp;<%= link_to 'Cancelar', email_templates_path %>
   </div>
 <% end %>
+  <div class="actions">
+    <%= button_to 'Visualizar', email_template_path(@email_template), :method => :get unless @email_template.new_record? %>
+  </div>

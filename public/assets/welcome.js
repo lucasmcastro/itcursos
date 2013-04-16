@@ -1,1 +1,0 @@
-$(".tile").click(function(){var t=$(this),e=t.attr("data-href");self.location=e});
